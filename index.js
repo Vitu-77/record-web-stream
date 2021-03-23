@@ -14,8 +14,6 @@ app.get('/', (_, res) => {
 		console.log('Gravação iniciada');
 
 		ffmpeg(webRadioStreamUrl)
-			.noVideo()
-			.audioChannels(1)
 			.audioBitrate(128)
 			.duration(recordDuration)
 			.on('end', () => {
